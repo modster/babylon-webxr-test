@@ -70,14 +70,14 @@
             var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
             skyboxMaterial.backFaceCulling = false;
             skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture(
-                "Space/space_", scene,
+                "textures/Space/space_", scene,
                 ["left.jpg", "up.jpg", "front.jpg", "right.jpg", "down.jpg", "back.jpg"]);
             skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
             skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
             skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
             skybox.material = skyboxMaterial;
 
-            BABYLON.SceneLoader.Append("./", "mesh/human.obj", scene, function (scene) {
+            BABYLON.SceneLoader.Append("./", "models/human.obj", scene, function (scene) {
                 //Light direction is up and left
                 var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
                 light.diffuse = new BABYLON.Color3(1, 0, 0);
